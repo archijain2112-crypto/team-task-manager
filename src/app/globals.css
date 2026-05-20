@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090a0f;
+  --foreground: #f3f4f6;
+  --card: #11131c;
+  --card-foreground: #f3f4f6;
+  --popover: #11131c;
+  --popover-foreground: #f3f4f6;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #1e2230;
+  --secondary-foreground: #f3f4f6;
+  --muted: #1e2230;
+  --muted-foreground: #94a3b8;
+  --accent: #312e81;
+  --accent-foreground: #f3f4f6;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1e2230;
+  --input: #1e2230;
+  --ring: #6366f1;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Premium UI Utility Classes */
+.glass-panel {
+  background: rgba(17, 19, 28, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(17, 19, 28, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glow-border {
+  transition: all 0.3s ease;
+}
+
+.glow-border:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.08);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2230;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #312e81;
+}
+
+/* Shimmer Loading Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #11131c 25%, #1e2230 50%, #11131c 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
